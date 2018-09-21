@@ -64,7 +64,8 @@ public class Test1 {
 		
 		driver.findElement(By.name("password")).sendKeys("demouser");
 		System.out.println("pass entered");
-		driver.findElement(By.xpath("//*[@id='loginfrm']/div[1]/div[5]/button")).click();
+		//driver.findElement(By.xpath("//*[@id='loginfrm']/div[1]/div[5]/button")).click();
+	  	driver.findElement(By.xpath("//form[@id='loginfrm']/button")).click();//working 20 sep
 		System.out.println("loggedin");
 	  
   }
@@ -75,7 +76,8 @@ public class Test1 {
 	WebDriverWait wait = new WebDriverWait(driver,1000);
 	//Thread.sleep(1000);
 	//Thread.sleep(1000);
-	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='body-section']/div/div[3]/div/div[1]/ul/li[1]/a"))).click();
+	//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='body-section']/div/div[3]/div/div[1]/ul/li[1]/a"))).click();
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Bookings"))).click();//working on 20 sep
 	//By.xpath("//*[@id='body-section']/div/div[3]/div/div[1]/ul/li[1]/a")).click();
 	//driver.findElement(By.xpath("//*[@id='body-section']/div/div[3]/div/div[1]/ul/li[1]/a")).click();
 	System.out.println("clicked on booking");
@@ -101,7 +103,8 @@ public class Test1 {
 		driver.switchTo().window(child); 
 	//System.out.println("");
 	//driver.navigate().to("http://www.phptravels.net/invoice?id=73&sessid=6897");
-	String b=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='invoiceTable']/tbody/tr[3]/td/table/tbody/tr[2]/td/table/tbody/tr[5]/td/strong"))).getText();
+	//String b=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='invoiceTable']/tbody/tr[3]/td/table/tbody/tr[2]/td/table/tbody/tr[5]/td/strong"))).getText();//worked
+	String b=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='invoiceTable']/tbody/tr[2]/td/div/table/tbody/tr/td/div[3]"))).getText();//working 20 sep
 	System.out.println(b);
 	 if(b.equalsIgnoreCase("Check out")){
 		 System.out.println("testcase passed");
