@@ -73,7 +73,7 @@ public class Test1 {
 
   @Test
   public void test1() throws Exception {
-	//this is the first test
+	/*//this is the first test
 	WebDriverWait wait = new WebDriverWait(driver,1000);
 	//Thread.sleep(1000);
 	//Thread.sleep(1000);
@@ -94,9 +94,9 @@ public class Test1 {
 	//driver.findElement(By.linkText("Invoice")).click();
 	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='bookings']/div[2]/div[4]/a"))).click();
 	/*String  handle= driver.getWindowHandle();
-	 driver.switchTo().window("http://www.phptravels.net/invoice?id=73&sessid=6897");*/
+	 driver.switchTo().window("http://www.phptravels.net/invoice?id=73&sessid=6897");*/*///worked
 	 
-	 Set<String> windows=driver.getWindowHandles();
+	 /*Set<String> windows=driver.getWindowHandles();
 	 System.out.println(windows.size());
 		Iterator<String> it=windows.iterator();
 		parent=it.next();
@@ -116,7 +116,7 @@ public class Test1 {
 	 }
 	
 	driver.findElement(By.xpath("//*[@id='btn']")).click();
-	System.out.println("download");
+	System.out.println("download");*/
 	  
   }
   
@@ -168,15 +168,15 @@ public class Test1 {
   
   @AfterTest
   public void afterTest() throws Exception {
-	  WebDriverWait wait = new WebDriverWait(driver,1000);
+	 /* WebDriverWait wait = new WebDriverWait(driver,1000);
 		driver.switchTo().window(parent);
-		System.out.println("Switched");
+		System.out.println("Switched");*///worked
 		/*Select lg =new Select(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/ul/ul/li[1]/ul")));
 		System.out.println("elememt selected");
 		lg.selectByVisibleText("Logout");*/
 		//hread.sleep(1000);
 		//driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/ul/ul/li[1]/ul")).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='collapse']/ul[2]/ul/li[1]/a"))).click();
+		/*wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='collapse']/ul[2]/ul/li[1]/a"))).click();
 		System.out.println("clicked");
 		driver.findElement(By.linkText("Logout")).click();
 		System.out.println("logout");
@@ -188,7 +188,7 @@ public class Test1 {
 			
 		}else{
 			System.out.println("logout failed");
-		}
+		}*///worked
 		
 		driver.quit();
   }
