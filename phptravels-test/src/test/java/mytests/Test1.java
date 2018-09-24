@@ -92,9 +92,9 @@ public class Test1 {
 	}
 			
 	//driver.findElement(By.linkText("Invoice")).click();
-	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='bookings']/div[2]/div[4]/a"))).click();
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='bookings']/div[2]/div[4]/a"))).click();*/
 	/*String  handle= driver.getWindowHandle();
-	 driver.switchTo().window("http://www.phptravels.net/invoice?id=73&sessid=6897");*/*///worked
+	 driver.switchTo().window("http://www.phptravels.net/invoice?id=73&sessid=6897");*///worked
 	 
 	 /*Set<String> windows=driver.getWindowHandles();
 	 System.out.println(windows.size());
