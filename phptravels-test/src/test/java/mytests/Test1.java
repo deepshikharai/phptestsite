@@ -30,7 +30,7 @@ public class Test1 {
 	//String url="https://www.google.co.in/";
 	
 
-  @BeforeTest
+  @BeforeClass
   public void beforeTest() throws Exception {
 	  DesiredCapabilities dcp = new DesiredCapabilities();
 		dcp.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
@@ -68,11 +68,40 @@ public class Test1 {
 		//driver.findElement(By.xpath("//*[@id='loginfrm']/div[1]/div[5]/button")).click();
 	  	driver.findElement(By.xpath("//form[@id='loginfrm']/button")).click();//working 20 sep
 		System.out.println("loggedin");
+	        driver.quit();
+	  	
 	  
   }
 
-  @Test
-  public void test1() throws Exception {
+  
+	  @Test(priority=1)
+	  public void user_should_navigate_to_mercurytours() throws Exception{
+			//String url="https://www.google.co.in";
+		 DesiredCapabilities dcp = new DesiredCapabilities();
+		dcp.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
+		dcp.setCapability(CapabilityType.PLATFORM, Platform.LINUX);
+		dcp.setCapability(CapabilityType.SUPPORTS_APPLICATION_CACHE, true);
+		dcp.setCapability(CapabilityType.SUPPORTS_NETWORK_CONNECTION, true);
+		
+		dcp.setCapability("name", "Mercury");
+		
+		dcp.setCapability("idleTimeout", 150);
+		
+		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);
+		String marsUrl="http://newtours.demoaut.com/";
+			driver.get(marsUrl);
+			String PageTitle=driver.getTitle();
+			System.out.println(PageTitle);
+			//System.out.println("test1");
+		}
+	 @Test(priority=2)
+	  public void user_should_logintotours() throws Exception{
+		 
+			driver.findElement(By.name("userName")).sendKeys("drai");
+			driver.findElement(By.name("password")).sendKeys("infosys16");
+			//System.out.println("entered in search box");
+			driver.findElement(By.name("login")).click();
+			} 
 	/*//this is the first test
 	WebDriverWait wait = new WebDriverWait(driver,1000);
 	//Thread.sleep(1000);
@@ -166,7 +195,7 @@ public class Test1 {
 	}*/
   
   
-  @AfterTest
+  @AfterClass
   public void afterTest() throws Exception {
 	 /* WebDriverWait wait = new WebDriverWait(driver,1000);
 		driver.switchTo().window(parent);
