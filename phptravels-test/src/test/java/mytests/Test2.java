@@ -20,11 +20,11 @@ public class Test2 {
 	private WebDriver driver;
 	@BeforeClass
 	public void run_the_browser() throws Exception{
-		System.setProperty("webdriver.chrome.driver","D:\\dokjunk\\drivers\\chromedriver_win32\\chromedriver.exe");
+		/*System.setProperty("webdriver.chrome.driver","D:\\dokjunk\\drivers\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
-		System.out.println("beforeclass");
+		System.out.println("beforeclass");*/
 		//driver.manage().window().maximize();
-		/*DesiredCapabilities dcp = new DesiredCapabilities();
+		DesiredCapabilities dcp = new DesiredCapabilities();
 		dcp.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
 		dcp.setCapability(CapabilityType.PLATFORM, Platform.LINUX);
 		dcp.setCapability(CapabilityType.SUPPORTS_APPLICATION_CACHE, true);
@@ -32,7 +32,7 @@ public class Test2 {
 		dcp.setCapability("name", "Mercury");
 		dcp.setCapability("idleTimeout", 150);
 		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);
-	*/
+	
 	
 	}
 	@Test(priority=1)

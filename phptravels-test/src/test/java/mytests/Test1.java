@@ -33,11 +33,11 @@ public class Test1 {
 
   @BeforeClass
   public void beforeTest() throws Exception {
-		System.setProperty("webdriver.chrome.driver","D:\\dokjunk\\drivers\\chromedriver_win32\\chromedriver.exe");
+		/*System.setProperty("webdriver.chrome.driver","D:\\dokjunk\\drivers\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
-		System.out.println("beforeclass");
+		System.out.println("beforeclass");*/
 	  
-	  /*  DesiredCapabilities dcp = new DesiredCapabilities();
+	    DesiredCapabilities dcp = new DesiredCapabilities();
 		dcp.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
 		dcp.setCapability(CapabilityType.PLATFORM, Platform.LINUX);
 		dcp.setCapability(CapabilityType.SUPPORTS_APPLICATION_CACHE, true);
@@ -47,7 +47,7 @@ public class Test1 {
 		
 		dcp.setCapability("idleTimeout", 150);
 		
-		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);*/
+		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);
 	        //driver = new RemoteWebDriver(new URL("http://zalenium:4444/wd/hub"),dcp);
 	
 		/*System.setProperty("webdriver.chrome.driver","D:\\drivers\\chromedriver_win32\\chromedriver.exe");
