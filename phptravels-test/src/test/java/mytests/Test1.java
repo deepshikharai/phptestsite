@@ -7,6 +7,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -32,7 +33,11 @@ public class Test1 {
 
   @BeforeClass
   public void beforeTest() throws Exception {
-	  DesiredCapabilities dcp = new DesiredCapabilities();
+		System.setProperty("webdriver.chrome.driver","D:\\dokjunk\\drivers\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+		System.out.println("beforeclass");
+	  
+	  /*  DesiredCapabilities dcp = new DesiredCapabilities();
 		dcp.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
 		dcp.setCapability(CapabilityType.PLATFORM, Platform.LINUX);
 		dcp.setCapability(CapabilityType.SUPPORTS_APPLICATION_CACHE, true);
@@ -42,7 +47,7 @@ public class Test1 {
 		
 		dcp.setCapability("idleTimeout", 150);
 		
-		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);
+		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);*/
 	        //driver = new RemoteWebDriver(new URL("http://zalenium:4444/wd/hub"),dcp);
 	
 		/*System.setProperty("webdriver.chrome.driver","D:\\drivers\\chromedriver_win32\\chromedriver.exe");
@@ -55,7 +60,7 @@ public class Test1 {
 		*/
 		driver.get(url);
 	  
-	  
+	/*  
 	  System.out.println("Title:-"+driver.getTitle());
 		
 		//Thread.sleep(1000);
@@ -69,15 +74,29 @@ public class Test1 {
 	  	driver.findElement(By.xpath("//form[@id='loginfrm']/button")).click();//working 20 sep
 		System.out.println("loggedin");
 	        driver.quit();
-	  	
+	  	*/
 	  
   }
 
   
 	  @Test(priority=1)
 	  public void user_should_navigate_to_mercurytours() throws Exception{
-			//String url="https://www.google.co.in";
-		 DesiredCapabilities dcp = new DesiredCapabilities();
+		  System.out.println("Title:-"+driver.getTitle());
+			
+			//Thread.sleep(1000);
+			
+			driver.findElement(By.name("username")).sendKeys("user@phptravels.com");
+			System.out.println("username entered");
+			
+			driver.findElement(By.name("password")).sendKeys("demouser");
+			System.out.println("pass entered");
+			//driver.findElement(By.xpath("//*[@id='loginfrm']/div[1]/div[5]/button")).click();
+		  	driver.findElement(By.xpath("//form[@id='loginfrm']/button")).click();//working 20 sep
+			System.out.println("loggedin");
+			System.out.println("beforeclass");
+	  }
+		  
+		  /* DesiredCapabilities dcp = new DesiredCapabilities();
 		dcp.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
 		dcp.setCapability(CapabilityType.PLATFORM, Platform.LINUX);
 		dcp.setCapability(CapabilityType.SUPPORTS_APPLICATION_CACHE, true);
@@ -87,8 +106,8 @@ public class Test1 {
 		
 		dcp.setCapability("idleTimeout", 150);
 		
-		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);
-		String marsUrl="http://newtours.demoaut.com/";
+		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);*/
+		/*String marsUrl="http://newtours.demoaut.com/";
 			driver.get(marsUrl);
 			String PageTitle=driver.getTitle();
 			System.out.println(PageTitle);
@@ -101,7 +120,7 @@ public class Test1 {
 			driver.findElement(By.name("password")).sendKeys("infosys16");
 			//System.out.println("entered in search box");
 			driver.findElement(By.name("login")).click();
-			} 
+			} */
 	/*//this is the first test
 	WebDriverWait wait = new WebDriverWait(driver,1000);
 	//Thread.sleep(1000);
@@ -147,7 +166,7 @@ public class Test1 {
 	driver.findElement(By.xpath("//*[@id='btn']")).click();
 	System.out.println("download");*/
 	  
-  }
+  //}
   
 	/*@Test
 	public void test2() throws Exception {
