@@ -25,7 +25,7 @@ public class Test1 {
 	static String parent;
 	static String child;
 	
-	//static WebDriverWait wait = new WebDriverWait(driver,1000);
+	static WebDriverWait wait = new WebDriverWait(driver,1000);
 	
 	static String url ="https://www.phptravels.net/login";
 	//String url="https://www.google.co.in/";
@@ -58,7 +58,9 @@ public class Test1 {
 		driver = new InternetExplorerDriver(); 
 		driver.manage().window().maximize();
 		*/
-		driver.get(url);
+		//driver.get(url);works
+	        driver.get("https://www.spark.co.nz/shop/");
+	        System.out.println("allphones clicking");
 	  
 	/*  
 	  System.out.println("Title:-"+driver.getTitle());
@@ -85,7 +87,7 @@ public class Test1 {
 			
 			//Thread.sleep(1000);
 			
-			driver.findElement(By.name("username")).sendKeys("user@phptravels.com");
+			/*driver.findElement(By.name("username")).sendKeys("user@phptravels.com");
 			System.out.println("username entered");
 			
 			driver.findElement(By.name("password")).sendKeys("demouser");
@@ -93,7 +95,13 @@ public class Test1 {
 			//driver.findElement(By.xpath("//*[@id='loginfrm']/div[1]/div[5]/button")).click();
 		  	driver.findElement(By.xpath("//form[@id='loginfrm']/button")).click();//working 20 sep
 			System.out.println("loggedin");
-			System.out.println("beforeclass");
+			System.out.println("beforeclass");*///works
+		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='quicklinks']/div[3]/a"))).click();
+		        System.out.println("allphones clicked");
+		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='entry']/div[2]/div[2]/div/a"))).click();
+		        System.out.println("phone clicked");
+		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='page']/div/div/div/div[2]/div[5]/div[3]/div/div/div[2]/div[1]/div[2]/div/span[2]/label/div"))).click();
+		        System.out.println("existingCustomer Clicked");
 	  }
 		  
 		  /* DesiredCapabilities dcp = new DesiredCapabilities();
