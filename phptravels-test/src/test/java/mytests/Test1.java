@@ -25,7 +25,7 @@ public class Test1 {
 	static String parent;
 	static String child;
 	
-	static WebDriverWait wait = new WebDriverWait(driver,1000);
+	//static WebDriverWait wait = new WebDriverWait(driver,1000);
 	
 	static String url ="https://www.phptravels.net/login";
 	//String url="https://www.google.co.in/";
@@ -96,6 +96,7 @@ public class Test1 {
 		  	driver.findElement(By.xpath("//form[@id='loginfrm']/button")).click();//working 20 sep
 			System.out.println("loggedin");
 			System.out.println("beforeclass");*///works
+		        WebDriverWait wait = new WebDriverWait(driver,1000);
 		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='quicklinks']/div[3]/a"))).click();
 		        System.out.println("allphones clicked");
 		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='entry']/div[2]/div[2]/div/a"))).click();
