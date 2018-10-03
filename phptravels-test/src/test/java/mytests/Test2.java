@@ -12,6 +12,8 @@ import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -38,7 +40,14 @@ public class Test2 {
 	@Test(priority=1)
 	  public void user_should_navigate_to_google_page(){
 			//String url="https://www.google.co.in";
+		String urlSpark="";
 		String url="http://newtours.demoaut.com/";
+			driver.get(urlSpark);
+			System.out.println(driver.getTitle());
+			System.out.println("all phones clicking");
+			WebDriverWait wait = new WebDriverWait(driver,1000);
+	        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='quicklinks']/div[3]/a"))).click();
+	        System.out.println("allphones clicked");
 			driver.get(url);
 			String PageTitle=driver.getTitle();
 			System.out.println(PageTitle);
