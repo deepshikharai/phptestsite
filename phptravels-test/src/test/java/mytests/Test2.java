@@ -31,7 +31,7 @@ public class Test2 {
 		dcp.setCapability(CapabilityType.PLATFORM, Platform.LINUX);
 		dcp.setCapability(CapabilityType.SUPPORTS_APPLICATION_CACHE, true);
 		dcp.setCapability(CapabilityType.SUPPORTS_NETWORK_CONNECTION, true);
-		dcp.setCapability("name", "Mercury");
+		dcp.setCapability("name", "SparkMercury");
 		dcp.setCapability("idleTimeout", 150);
 		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);
 	
@@ -40,7 +40,7 @@ public class Test2 {
 	@Test(priority=1)
 	  public void user_should_navigate_to_google_page(){
 			//String url="https://www.google.co.in";
-		String urlSpark="";
+		String urlSpark="https://www.spark.co.nz/shop/";
 		String url="http://newtours.demoaut.com/";
 			driver.get(urlSpark);
 			System.out.println(driver.getTitle());
