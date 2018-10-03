@@ -99,10 +99,10 @@ public class Test1 {
 		        WebDriverWait wait = new WebDriverWait(driver,1000);
 		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='quicklinks']/div[3]/a"))).click();
 		        System.out.println("allphones clicked");
-		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='entry']/div[2]/div[2]/div/a"))).click();
+		        /*wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='entry']/div[2]/div[2]/div/a"))).click();
 		        System.out.println("phone clicked");
 		        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='page']/div/div/div/div[2]/div[5]/div[3]/div/div/div[2]/div[1]/div[2]/div/span[2]/label/div"))).click();
-		        System.out.println("existingCustomer Clicked");
+		        System.out.println("existingCustomer Clicked");*/
 	  }
 		  
 		  /* DesiredCapabilities dcp = new DesiredCapabilities();
