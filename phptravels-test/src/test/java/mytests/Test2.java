@@ -27,13 +27,13 @@ public class Test2 {
 		System.out.println("beforeclass");*/
 		//driver.manage().window().maximize();
 		DesiredCapabilities dcp = new DesiredCapabilities();
-		dcp.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
-		dcp.setCapability(CapabilityType.PLATFORM, Platform.LINUX);
+		dcp.setCapability(CapabilityType.BROWSER_NAME, BrowserType.IE);
+		dcp.setCapability(CapabilityType.PLATFORM, Platform.WINDOWS);
 		dcp.setCapability(CapabilityType.SUPPORTS_APPLICATION_CACHE, true);
 		dcp.setCapability(CapabilityType.SUPPORTS_NETWORK_CONNECTION, true);
 		dcp.setCapability("name", "SparkMercury");
 		dcp.setCapability("idleTimeout", 150);
-		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);
+		driver = new RemoteWebDriver(new URL("http://104.199.94.18:4444/wd/hub"),dcp);
 	
 	
 	}
