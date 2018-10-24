@@ -47,7 +47,8 @@ public class Test1 {
 		
 		dcp.setCapability("idleTimeout", 150);
 		
-		driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);
+		//driver = new RemoteWebDriver(new URL("http://35.231.161.229:4444/wd/hub"),dcp);
+	        driver = new RemoteWebDriver(new URL("http://104.199.94.18:4444/wd/hub"),dcp);  
 	        //driver = new RemoteWebDriver(new URL("http://zalenium:4444/wd/hub"),dcp);
 	
 		/*System.setProperty("webdriver.chrome.driver","D:\\drivers\\chromedriver_win32\\chromedriver.exe");
